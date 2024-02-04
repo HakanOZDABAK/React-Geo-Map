@@ -8,8 +8,8 @@ positionOptions:{
     maximumAge:0
 },userDecisionTimeout: 10000
       });
-    const DEFAULT_LANGITUDE = 35.311508105246226;
-    const DEFAULT_LATITUDE = 37.03805979234759;
+    const DEFAULT_LANGITUDE = 17.63550145595826;
+    const DEFAULT_LATITUDE = 35.242209769953156;
     const[longitude,setLongitude] = useState<any>(geolocation.coords ? geolocation.coords.longitude:DEFAULT_LANGITUDE)
     const[latitude,setLatitude] = useState<any>(geolocation.coords ? geolocation.coords.latitude:DEFAULT_LATITUDE)
 
