@@ -31,7 +31,7 @@ export default function Map() {
   return (
     <MapContainer center={[latitude, longitude]} zoom={12}>
       <TileLayer
-        url=""
+        url=" ADDED NEW MAP"
         attribution='&copy; <a href="http://osm.org.copyright">OpenStreetMap</a> contributors'
       ></TileLayer>
       <Marker position={[latitude, longitude]}>
