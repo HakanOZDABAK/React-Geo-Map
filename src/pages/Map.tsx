@@ -1,24 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { useGeolocated } from "react-geolocated";
-function LocationMarker() {
-    const [position, setPosition] = useState(null)
-    const map = useMapEvents({
-      click() {
-        map.locate()
-      },
-      locationfound(e) {
-        setPosition(e.latlng as any)
-        map.flyTo(e.latlng, map.getZoom())
-      },
-    })
-  
-    return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are here</Popup>
-      </Marker>
-    )
-  }
+
 export default function Map() {
   const geolocation = useGeolocated({
     positionOptions: {
@@ -48,13 +31,12 @@ export default function Map() {
   return (
     <MapContainer center={[latitude, longitude]} zoom={12}>
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url=""
         attribution='&copy; <a href="http://osm.org.copyright">OpenStreetMap</a> contributors'
       ></TileLayer>
       <Marker position={[latitude, longitude]}>
         <Popup>Your are Here!</Popup>
       </Marker>
-      <LocationMarker/>
     </MapContainer>
   );
 }
