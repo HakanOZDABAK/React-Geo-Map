@@ -13,10 +13,6 @@ function LocationMarker({ setLocation }:{ setLocation :any }) {
     click() {
       map.locate();
     },
-    dblclick(e) {
-      setLocation(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-    },
     locationfound(e) {
       setLocation(e.latlng);
       map.flyTo(e.latlng, map.getZoom());
